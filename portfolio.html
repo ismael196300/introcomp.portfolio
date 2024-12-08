@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton+SC&family=Archivo+Black&family=Poppins:wght@400;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+</head>
+<link rel="stylesheet" href="portfolio.css">
+<body>
+   <canvas></canvas>
+    <div class="main">
+        <div class="title">
+            <p class="titlename">GROUP  13</p>
+        </div>
+        <div class="members">
+            <div class="img-1 bsimg" id="img-1 bsimg">
+                <img src="ALIPAO .jpg" alt="">
+                <p class="alipao">ALIPAO, Mikaella Cassandra B.</p>
+                
+            </div>
+            <div class="img-2 bsimg" id="bsimg2">
+                <img src="logo.png" alt="">
+                <p class="barrozo">BARROZO, Gene Andrei D.</p>
+            </div>
+            <div class="img-3 bsimg" id="img-3 bsimg3">
+                <img src="logo.png" alt="">
+                <div class="hernandez">HERNANDEZ, Cedrick T.</div>
+            </div>
+            <div class="img-4 bsimg" id="img-4 bsimg4">
+                <img src="logo.png" alt="">
+                <p class="causing">CAUSING, John Nelson T.J</p>
+            </div>
+        </div>
+    </div>
+    <div class="info-main" id="info-main">
+        <div class="title-infoname">
+            <p class="member-name">NAME HERE</p>
+        </div>
+        <div class="infos-body">
+            <div class="personal-infos info">
+                <div class="box mainbx">
+                    <box-icon type='solid' name='user'></box-icon>
+                        <p class="perso-title">PERSONAL INFORMATION</p><br>
+                </div>
+                 <div class="more-perso">
+                    <div class="box">
+                        <box-icon type='solid' name='calendar-week'></box-icon>
+                        <p class="birth">BIRTHDATE:</p>
+                    </div>
+                    <p class="birth-info"></p><br>
+                    <div class="box">
+                        <box-icon type='solid' name='map'></box-icon>
+                        <p class="place">PLACE:</p>
+                    </div>
+                    <p class="place-info"></p><br>
+                    <p class="contact">CONTACT INFORMATION:</p><br>
+                    <div class="box">
+                        <box-icon type='solid' name='phone-call'></box-icon>
+                        <p class="number">NUMBER:</p>
+                    </div>
+                    <p class="number-info"></p><br>
+                    <div class="box">
+                        <box-icon type='solid' name='envelope'></box-icon>
+                        <p class="email">EMAIL:</p>
+                    </div>
+                    <p class="email-info"></p><br>
+                    <br>
+                    <div class="about-member">
+                        <p class="about-me-title">ABOUT ME:</p><br>
+                        <p class="about-para">PARAGRAPH</p>
+                    </div>
+                 </div>
+            </div>
+            <div class="educ info">
+                <div class="box mainbx">
+                    <box-icon type='solid' name='book-open'></box-icon>
+                    <p class="educ-title ">EDUCATION</p><br>
+                </div>
+                <div class="more-educ">
+                    <div class="box">
+                        <box-icon type='solid' name='graduation'></box-icon>
+                        <p class="degree">DEGREE:</p>
+                    </div>
+                    <p class="degree-info"></p><br>
+                    <div class="box">
+                        <box-icon type='solid' name='school'></box-icon>
+                        <p class="insti">INSTITUTION:</p>
+                    </div>
+                    <p class="insti-info"></p><br>
+                    <p class="year-lvl">YEAR LEVEL:</p>
+                    <p class="year-info"></p><br>
+                    <div class="why-comp">
+                        <p class="why-comp-title">WHY COMPUTER SCIENCE?</p><br>
+                        <p class="why-comp-para">PARAGRAPH</p>
+                    </div>
+                </div>
+            </div>
+            <div class="extra info">
+                <p class="extra-title mainbx">EXTRA CURRICULAR:</p><br>
+                <div class="more-extra">
+                    <p class="hobbies">HOBBIES:</p>
+                    <p class="hob-info"></p><br>
+                    <p class="fun">FUN FACTS:</p>
+                    <p class="fun-info"></p>
+                </div>
+            </div>
+        </div>
+        <div class="backbtn" id="backBtn">
+            <button class="back-button" id="back-button" type="button">
+                BACK
+            </button>
+        </div>
+    </div>
+    <div class="intro-body">
+        <!-- <img src="logo.png" alt="wala"> -->
+        <div class="intro-title">GROUP 13</div>
+    </div>
+</body>
+<script>
+    let main = document.querySelector(".main");
+let bsimgs = document.querySelectorAll(".bsimg");
+/* info main */
+let infoMain = document.querySelector(".info-main");
+infoMain.style.opacity= "0";
+infoMain.style.transform = "translateY(200%)"
+
+
+bsimgs.forEach((img) => {
+    img.addEventListener("click", () => {
+        main.style.transform = "translateY(-200%)";
+        main.style.opacity = "0";
+        infoMain.style.transform = "translateY(0%)"
+        infoMain.style.opacity = "1"
+    });
+});
+var backBtn = document.getElementById("back-button")
+backBtn.addEventListener("click",()=>{
+    main.style.transform = "translateY(0%)";
+    main.style.opacity = "1";
+     infoMain.style.transform = "translateY(200%)"
+        infoMain.style.opacity = "0"
+})
+// name infos 
+function getName(image, name){
+    image.addEventListener("click",()=>{
+        document.querySelector(".about-para").style.fontSize = "16px"
+     document.querySelector(".degree-info").textContent = "Bachelor of Science in Computer Science"
+     document.querySelector(".insti-info").textContent = "Eulogio \"Amang\" Rodriguez Institute of Science and Technology - Manila Campus"
+     document.querySelector(".year-info").textContent = "First-Year Student"
+
+    document.querySelector(".member-name").textContent = name.textContent
+    //hernandez
+    if(document.querySelector(".member-name").textContent == "HERNANDEZ, Cedrick T."){
+        document.querySelector(".birth-info").textContent = "January 17, 2006"
+        document.querySelector(".place-info").textContent = "2708 Legarda St. Sampaloc, Manila"
+        document.querySelector(".number-info").textContent = "09159647787"
+        document.querySelector(".email-info").textContent = "Hernandez.c.bscs@gmail.com"
+        //about me
+        document.querySelector(".about-para").textContent = "I am a Bachelor of Science in Computer Science student passionate about programming and technology. My goal is to become a skilled programmer and create innovative solutions. I enjoy using computers, whether for coding, gaming, or exploring new software. With a dedication to learning and growth, I strive to improve my skills and contribute to the tech industry."
+        //why comp
+        document.querySelector(".why-comp-para").textContent = "I choose computer science to gain the knowledge to solve complex problems, create impactful websites and apps, and drive societal change."
+        document.querySelector(".hob-info").textContent = "I love playing both mobile and pc offline and online games, basketball"
+        document.querySelector(".fun-info").textContent = "I just can’t"
+        document.querySelector(".about-para").style.fontSize = "13px"
+
+}
+//alipao   
+if(document.querySelector(".member-name").textContent == "ALIPAO, Mikaella Cassandra B."){
+        document.querySelector(".birth-info").textContent = " "
+        document.querySelector(".place-info").textContent = "North Fairview, Quezon City, Metro Manila"
+
+        document.querySelector(".number-info").textContent = "09692578141"
+        document.querySelector(".email-info").textContent = "alipao.m.c.bscs@gmail.com"
+        //about me
+        document.querySelector(".about-para").textContent = "I am a first-year Computer Science student with a strong curiosity about technology and its role in shaping the future. I enjoy learning new concepts, which inspire me to pursue a deeper understanding of programming and software development. My goal is to build a solid foundation in computer science and work on innovative projects that make a difference."
+        //why comp
+        document.querySelector(".why-comp-para").textContent = "I chose computer science because it combines logic, creativity, and innovation. I’m fascinated by how technology can solve complex problems and bring new ideas to life. Studying computer science allows me to turn my passion for technology into skills that can help improve lives and contribute to society."
+
+        document.querySelector(".hob-info").textContent = "I enjoy reading books, doing makeup, exploring coding tutorials, and solving puzzles."
+        document.querySelector(".fun-info").textContent = ""
+ 
+        document.querySelector(".about-para").style.fontSize = "13px"
+}
+//causing 
+if(document.querySelector(".member-name").textContent == "CAUSING, John Nelson T.J"){
+        document.querySelector(".birth-info").textContent = "May 7, 2006"
+        document.querySelector(".place-info").textContent = "48-A Loreto St. Sampaloc Manila"
+
+        document.querySelector(".number-info").textContent = "09280490232"
+        document.querySelector(".email-info").textContent = "causing.j.n.bscs@gmail.com"
+        //about me
+        document.querySelector(".about-para").textContent = "I am a first-year Computer Science student."
+        //why comp
+        document.querySelector(".why-comp-para").textContent = "I just want to learn programming"
+
+        document.querySelector(".hob-info").textContent = "Playing War game in pc and learnong about programming."
+        document.querySelector(".fun-info").textContent = ""
+ 
+
+}
+//barrozo
+if(document.querySelector(".member-name").textContent == "BARROZO, Gene Andrei D."){
+        document.querySelector(".birth-info").textContent = "January 15, 2006"
+        document.querySelector(".place-info").textContent = "Panghulo Obando Bulacan"
+
+        document.querySelector(".number-info").textContent = "09203559525"
+        document.querySelector(".email-info").textContent = "barrozo.g.a.bscs@gmail.com"
+        //about me
+        document.querySelector(".about-para").textContent = "I’m a first-year Computer Science student with a passion for technology and problem-solving. I’m diving headfirst into the world of programming, algorithms, and systems, and I’m excited to explore how these concepts shape the tools we use every day."
+        //why comp
+        document.querySelector(".why-comp-para").textContent = "I chose Computer Science because i want to explore different areas and ideas in Computer Science "
+
+        document.querySelector(".hob-info").textContent = "Playing chess and listening to music."
+        document.querySelector(".fun-info").textContent = ""
+ 
+
+}
+})
+}
+getName(document.querySelector(".img-1"),document.querySelector(".alipao"))
+getName(document.querySelector(".img-2"),document.querySelector(".barrozo"))
+getName(document.querySelector(".img-3"),document.querySelector(".hernandez"))
+getName(document.querySelector(".img-4"),document.querySelector(".causing")) 
+
+
+// intro click 
+document.querySelector(".intro-body").addEventListener("click",()=>{
+    document.querySelector(".intro-body").style.transform = "translateY(-200%)"
+    document.querySelector(".intro-body").style.opacity = "0"
+
+
+
+
+
+
+
+
+
+
+//animation canvas 
+let canva = document.querySelector('canvas')
+canva.width = window.innerWidth
+canva.height = window.innerHeight
+let c = canva.getContext('2d')
+let colorArray = ['yellow','red','blue','green','white','pink','violet','tomato']
+function Circle(x,y,dx,dy,size,color){
+    this.x = x
+    this.y = y
+    this.dx = dx 
+    this.dy = dy
+    this.size = size 
+    this.color = color
+    this.draw = function(){
+        c.beginPath()
+        c.strokeStyle = this.color
+        
+        c.arc(this.x,this.y,this.size,0,Math.PI *2, false )
+         c.fillStyle = this.color
+        c.fill()
+        c.stroke()
+    }
+    this.update = function(){
+        if(this.x + this.size > innerWidth   ||  this.x - this.size < 0){
+            this.dx= -this.dx
+        }
+        if(this.y+ this.size > innerHeight  ){
+            this.dy= -this.dy
+        }
+        this.x += this.dx
+        this.y += this.dy
+        this.draw()
+    }
+}
+let circleArray = []
+// function spawn(x,y,velo,veloy,size,color){
+
+// }
+for (let i = 0; i < 20; i++) {
+    let size = Math.random() * 30+ 20
+    let x = Math.random() * window.innerWidth + size
+let y = Math.random() * window.innerHeight + size
+
+let velo = (Math.random() + -.5) *.5
+let veloy =(Math.random() + .5) *   1
+let color = colorArray[Math.floor(Math.random()* colorArray.length)]
+   circleArray.push(new Circle(x,y,velo,veloy,size,color))
+    
+}
+let spawnCir = setInterval(()=>{
+    let size = Math.random() * 30+ 20
+    let x = Math.random() * window.innerWidth + size
+let y = window.innerHeight  + Math.random() *  - size;
+
+let velo = (Math.random() + -.5) *.5
+let veloy =(Math.random() + .5) *   1
+let color = colorArray[Math.floor(Math.random()* colorArray.length)]
+   circleArray.push(new Circle(x,y,velo,veloy,size,color))
+},1000)
+function animate(){
+    requestAnimationFrame(animate)
+    c.clearRect(0,0,innerWidth,innerHeight)
+    
+      circleArray.forEach(circle => {
+        circle.update()
+      });
+      
+      
+    
+   
+   
+}
+
+})
+
+</script>
+</html>
