@@ -14,7 +14,7 @@ canvas {
 body, html {
     height: 100vh;
     overflow: hidden;
-    background-image: url(portfolio.png);
+    background-image: url(portfolio.jpg);
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed;
